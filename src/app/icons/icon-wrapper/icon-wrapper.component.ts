@@ -41,5 +41,10 @@ export class IconWrapperComponent implements OnInit {
     this.filteredIcons = this.allIcons.filter(icon =>
       icon.keywords.some(k => k.toLowerCase().includes(keyword.toLowerCase()))
     );
+    console.log(this.filteredIcons);
+  }
+
+  checkIfCategoryHasIcons(uniqueCategory: Category): boolean {
+    return this.filteredIcons.some(icon => icon.category === uniqueCategory);
   }
 }

@@ -10,4 +10,8 @@ import { Category } from '../../core/models/Category';
 export class IconListComponent {
   @Input() icons: Icon[] = [];
   @Input() iconCategory: Category | undefined;
+
+  onIconClick(icon: Icon): void {
+    console.log('clicked icon', icon);
+  }
 }

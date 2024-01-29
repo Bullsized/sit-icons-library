@@ -1,18 +1,23 @@
-<div class="main-div">
-  <h1>Icons library</h1>
+<div class="h-100 w-100 d-flex">
+  <div class="frame-div w-100">
+    <h1 class="main-h1 text-center">Icons library</h1>
 
-  <p>
-    <mat-form-field appearance="outline">
-      <mat-label>Outline form field</mat-label>
-      <input matInput placeholder="Placeholder" [formControl]="searchFC" />
-      <mat-hint>Hint</mat-hint>
-    </mat-form-field>
-  </p>
+    <div class="input-wrapper">
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Icon search</mat-label>
+        <input matInput placeholder="Try finding your desired icon with a keyword" [formControl]="searchFC" />
+      </mat-form-field>
+    </div>
 
-  <div style="display: flex; flex-wrap: wrap">
-    @for (category of uniqueCategories; track $index) {
-      <h2>{{ category }}</h2>
-      <sit-icon-list [icons]="filteredIcons" [iconCategory]="category"></sit-icon-list>
-    }
+    <div>
+      @for (category of uniqueCategories; track $index) {
+        <h2 [ngClass]="{ 'mt-2rem': $index !== 0 }">{{ category }}</h2>
+        @if (!checkIfCategoryHasIcons(category)) {
+          <div>Your search yielded no icons for this category!</div>
+        } @else {
+          <sit-icon-list [icons]="filteredIcons" [iconCategory]="category"></sit-icon-list>
+        }
+      }
+    </div>
   </div>
 </div>

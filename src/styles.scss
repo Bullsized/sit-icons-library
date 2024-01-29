@@ -1,12 +1,81 @@
 @use 'variables' as v;
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 html,
 body {
   height: 100%;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
   color: v.$text;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h1,
+h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.mt-2rem {
+  margin-top: 2rem;
+}
+
+// Custom scrollbar styles start
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: v.$accent v.$background;
+}
+
+/* Other browsers */
+*::-webkit-scrollbar {
+  width: 14px;
+}
+
+*::-webkit-scrollbar-track {
+  background: v.$background;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: v.$accent;
+  border-radius: 6px;
+  border: 2px solid v.$background;
+}
+
+/* Material overrides */
+// outlined search input
+.mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__leading, .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__notch, .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__trailing {
+  border-color: v.$accent !important;
+}
+
+// mat-label
+.mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-floating-label, .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-floating-label--float-above {
+  color: v.$accent !important;
 }
