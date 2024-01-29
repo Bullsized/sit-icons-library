@@ -1,0 +1,13 @@
+@use 'variables' as v;
+
+.icon-accent {
+  filter: v.$svg-icon-filter;
+  width: 40px;
+  height: 40px;
+  padding: 0.5rem;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
