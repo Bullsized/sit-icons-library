@@ -1,23 +1,18 @@
 <div class="main-div">
   <h1>Icons library</h1>
 
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Outline form field</mat-label>
+      <input matInput placeholder="Placeholder" [formControl]="searchFC" />
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+  </p>
+
   <div style="display: flex; flex-wrap: wrap">
     @for (category of uniqueCategories; track $index) {
       <h2>{{ category }}</h2>
-      <div>
-        @for (icon of allIcons; track $index) {
-          @if (icon.category === category) {
-            <img
-              [src]="'/assets/' + icon.path"
-              [alt]="icon.name"
-              class="icon-accent"
-              width="20px"
-            />
-          }
-        } @empty {
-          <div>We don't have anything</div>
-        }
-      </div>
+      <sit-icon-list [icons]="filteredIcons" [iconCategory]="category"></sit-icon-list>
     }
   </div>
 </div>
