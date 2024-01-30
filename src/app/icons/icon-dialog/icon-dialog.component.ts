@@ -29,7 +29,7 @@ export class IconDialogComponent implements OnInit {
   copyToClipboard(): void {
     this.clipboard.copy(this.transformedIconName);
     this.dialogRef.close();
-    this.snackBar.open('Icon name copied to clipboard!', undefined, { duration: 3000 });
+    this.snackBar.open('Icon name copied to your clipboard!', undefined, { duration: 3000 });
   }
 
   downloadIcon(): void {
