@@ -1,1 +1,11 @@
-<p>icon-dialog works!</p>
+<h2 class="dialog-title">{{ transformedIconName }}</h2>
+<mat-dialog-content class="mat-typography dialog-content">
+  <h3>Category: {{ data.icon.category }}</h3>
+  <div class="text-center">
+    <img [src]="'/assets/' + data.icon.path" [alt]="transformedIconName" class="icon-dialog" />
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions class="d-flex justify-content-between dialog-actions">
+  <button mat-stroked-button (click)="copyToClipboard()">Copy name</button>
+  <button mat-stroked-button (click)="downloadIcon()">Download</button>
+</mat-dialog-actions>

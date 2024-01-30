@@ -1,0 +1,17 @@
+@use 'variables' as v;
+
+.dialog-title {
+  padding: 16px 24px 0 24px;
+}
+
+.dialog-content {
+  padding: 0 24px;
+
+  .icon-dialog {
+    filter: v.$svg-icon-filter;
+  }
+}
+
+.dialog-actions {
+  padding: 0 24px 16px 24px;
+}
