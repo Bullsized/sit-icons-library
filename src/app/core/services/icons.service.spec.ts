@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
 import { IconsService } from './icons.service';
 
 describe('IconsService', () => {
