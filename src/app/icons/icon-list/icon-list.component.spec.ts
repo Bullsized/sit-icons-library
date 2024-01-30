@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { IconListComponent } from './icon-list.component';
 
 describe('IconListComponent', () => {
@@ -8,10 +7,9 @@ describe('IconListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [IconListComponent]
-    })
-    .compileComponents();
-    
+      declarations: [IconListComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(IconListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
