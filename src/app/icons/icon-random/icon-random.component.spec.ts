@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { IconRandomComponent } from './icon-random.component';
 
 describe('IconRandomComponent', () => {
@@ -8,10 +7,9 @@ describe('IconRandomComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [IconRandomComponent]
-    })
-    .compileComponents();
-    
+      declarations: [IconRandomComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(IconRandomComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

@@ -21,30 +21,22 @@ export class IconWrapperComponent implements OnInit {
   ngOnInit(): void {
     this.allIcons = this.iconsService.getAllIcons();
     this.filteredIcons = this.allIcons;
-    this.uniqueCategories = [
-      ...new Set(this.allIcons.map((icon) => icon.category)),
-    ] as Category[];
+    this.uniqueCategories = [...new Set(this.allIcons.map((icon) => icon.category))] as Category[];
 
-    console.log(this.allIcons);
-    console.log(this.uniqueCategories);
+    this.searchFC.valueChanges.pipe(debounceTime(500)).subscribe((searchValue) => {
+      if (searchValue === null) return;
 
-    this.searchFC.valueChanges
-      .pipe(debounceTime(500))
-      .subscribe((searchValue) => {
-        if (searchValue === null) return;
-
-        this.filterIconsOnInput(searchValue);
-      });
+      this.filterIconsOnInput(searchValue);
+    });
   }
 
   filterIconsOnInput(keyword: string): void {
-    this.filteredIcons = this.allIcons.filter(icon =>
-      icon.keywords.some(k => k.toLowerCase().includes(keyword.toLowerCase()))
+    this.filteredIcons = this.allIcons.filter((icon) =>
+      icon.keywords.some((k) => k.toLowerCase().includes(keyword.toLowerCase()))
     );
-    console.log(this.filteredIcons);
   }
 
   checkIfCategoryHasIcons(uniqueCategory: Category): boolean {
-    return this.filteredIcons.some(icon => icon.category === uniqueCategory);
+    return this.filteredIcons.some((icon) => icon.category === uniqueCategory);
   }
 }
