@@ -18,7 +18,7 @@ export class DownloadService {
       // Create a link element and trigger the download
       const link: HTMLAnchorElement = document.createElement('a');
       link.href = url;
-      // You can customize the file name
+      // Customizing the file name to the name of the icon
       link.download = `${icon.name}.svg`;
       document.body.appendChild(link);
       link.click();
